@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ሀበሻ Hub // VIP Portal</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <header>
+        <div class="logo"><i class="fa-solid fa-fire"></i> ሀበሻ Hub</div>
+        <div class="header-actions">
+            <button class="header-auth-btn" onclick="openAuthModal()"><i class="fa-solid fa-right-to-bracket"></i> <span id="headerAuthBtnText">Login / Sign Up</span></button>
+            
+            <div class="hamburger-menu" id="hamburgerBtn" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="dropdown-menu" id="dropdownMenu">
+                <div class="menu-item">
+                    <span><i class="fa-solid fa-globe"></i> <span id="langLabel">Language</span></span>
+                    <select id="langSelect" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="am">አማርኛ</option>
+                    </select>
+                </div>
+                <div class="menu-item" onclick="toggleTheme()">
+                    <span id="themeLabel"><i class="fa-solid fa-moon"></i> Dark Mode</span>
+                </div>
+                <div class="menu-item" onclick="openPaymentModal()">
+                    <span id="vipLabel"><i class="fa-solid fa-star"></i> VIP Registration</span>
+                </div>
+                <div class="menu-item" onclick="openAboutUs()">
+                    <span id="aboutLabel"><i class="fa-solid fa-circle-info"></i> About Us</span>
+                </div>
+                <div class="menu-item logout-item" id="logoutBtn" onclick="handleLogout()" style="display: none;">
+                    <span id="logoutLabel"><i class="fa-solid fa-right-from-bracket"></i> Log Out</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="pageHome" class="page-view active">
+        <nav>
+            <button class="nav-btn active" onclick="switchCategory('videos', this)">
+                <i class="fa-solid fa-play"></i> <span id="navVideos">Videos</span> <span class="count-badge">20</span>
+            </button>
+            <button class="nav-btn" onclick="switchCategory('creators', this)">
+                <i class="fa-solid fa-user-group"></i> <span id="navCreators">Models</span> <span class="count-badge">20</span>
+            </button>
+            <button class="nav-btn" onclick="switchCategory('channels', this)">
+                <i class="fa-solid fa-users"></i> <span id="navGroups">Groups</span> <span class="count-badge">20</span>
+            </button>
+            <button class="nav-btn" onclick="switchCategory('streams', this)">
+                <i class="fa-solid fa-headset"></i> <span id="navLive">Lives</span> <span class="count-badge">20</span>
+            </button>
+        </nav>
+
+        <div class="grid-container" id="contentGrid"></div>
+
+        <div class="bottom-action-container" id="bottomActionContainer">
+            <div class="spinner" id="bottomSpinner"></div>
+            <div class="vip-alert-box" id="vipAlertBox">
+                <div class="vip-alert-text" id="vipAlertText"></div>
+                <button class="join-vip-btn" onclick="handleBottomActionClick()" id="bottomActionBtn"></button>
+            </div>
+        </div>
+    </main>
+
+    <main id="pageChat" class="page-view">
+        <div class="chat-container">
+            <div class="chat-sidebar" id="chatList">
+                </div>
+            <div class="chat-window" id="chatWindow">
+                <div class="chat-header" id="chatHeader">
+                    <span id="activeChatName">Select a chat to begin</span>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="chat-placeholder">Choose a conversation from the left menu.</div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" placeholder="Write a message..." disabled>
+                    <button id="sendChatBtn" onclick="sendMessage()" disabled><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+                <div class="chat-error-bar" id="chatErrorBar"></div>
+            </div>
+        </div>
+    </main>
+
+    <main id="pageProfile" class="page-view">
+        <div class="profile-card">
+            <div class="profile-header-bg"></div>
+            <div class="profile-pfp-wrapper">
+                <img src="https://i.postimg.cc/xCgYV8j4/blackteensubmit-model-1.jpg" id="profilePfp" alt="User Profile Picture">
+            </div>
+            <div class="profile-body">
+                <h2 id="profileName">Guest User</h2>
+                <p id="profileUsername">@guest</p>
+                <div class="profile-stats">
+                    <div class="stat"><strong id="profileFollowers">0</strong> <span>Followers</span></div>
+                    <div class="stat"><strong id="profileFollowing">0</strong> <span>Following</span></div>
+                </div>
+                <p class="profile-bio" id="profileBio">Welcome to my profile! Sign in to customize your details.</p>
+                
+                <button class="edit-profile-btn" onclick="toggleEditProfile()"><i class="fa-solid fa-pen-to-square"></i> Edit Profile</button>
+
+                <form id="editProfileForm" class="edit-profile-form" onsubmit="saveProfile(event)" style="display:none;">
+                    <div class="form-group">
+                        <label>Display Name</label>
+                        <input type="text" id="editNameInput" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Bio</label>
+                        <textarea id="editBioInput" class="form-input" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="auth-btn"><i class="fa-solid fa-floppy-disk"></i> Save Profile</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="app-navigation">
+        <button class="app-nav-btn active" onclick="navigateTo('home', this)">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </button>
+        <button class="app-nav-btn" onclick="navigateTo('chat', this)">
+            <i class="fa-solid fa-comments"></i>
+            <span>Chat</span>
+        </button>
+        <button class="app-nav-btn" onclick="navigateTo('profile', this)">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </button>
+    </footer>
+
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="authModalTitle">Account Access</h3>
+                <button class="close-btn" onclick="closeAuthModal()">&times;</button>
+            </div>
+
+            <div class="auth-nav">
+                <button class="auth-tab active" id="loginTabBtn" onclick="toggleAuthForm('login')">Login</button>
+                <button class="auth-tab" id="signupTabBtn" onclick="toggleAuthForm('signup')">Sign Up</button>
+            </div>
+
+            <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+                <div class="form-group">
+                    <label id="loginIdentifierLabel">Email or Phone Number</label>
+                    <input type="text" id="loginIdentifier" class="form-input" placeholder="Email or 09XXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label id="loginPasswordLabel">Password</label>
+                    <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+                    <div class="error-msg" id="loginError">Invalid credentials.</div>
+                </div>
+                <button type="submit" class="auth-btn" id="loginSubmitBtn">Log In</button>
+            </form>
+
+            <form id="signupForm" onsubmit="handleSignupSubmit(event)" style="display: none;">
+                <div class="form-group">
+                    <label id="signupNameLabel">Full Name</label>
+                    <input type="text" id="signupName" class="form-input" placeholder="Enter full name" required>
+                </div>
+                <div class="form-group">
+                    <label id="signupIdentifierLabel">Email or Phone Number</label>
+                    <input type="text" id="signupIdentifier" class="form-input" placeholder="Email or 09XXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label id="signupPasswordLabel">Password (At least 6 characters, letters & numbers)</label>
+                    <input type="password" id="signupPassword" class="form-input" placeholder="••••••••" required>
+                    <div class="error-msg" id="passwordComplexityError">Password must be at least 6 characters with letters & numbers.</div>
+                </div>
+                <div class="form-group">
+                    <label id="signupConfirmPasswordLabel">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" class="form-input" placeholder="••••••••" required>
+                    <div class="error-msg" id="passwordMatchError">Passwords do not match.</div>
+                </div>
+                <button type="submit" class="auth-btn" id="signupSubmitBtn">Send Verification Code</button>
+            </form>
+
+            <form id="verifyCodeForm" onsubmit="handleVerifyCodeSubmit(event)" style="display: none;">
+                <div class="bilingual-instructions" id="verifyInstructions"></div>
+                <div class="form-group">
+                    <label id="otpLabel">Enter 6-Digit Verification Code</label>
+                    <input type="text" id="otpCode" class="form-input" placeholder="123456" maxlength="6" required>
+                    <div class="error-msg" id="otpError">Invalid code. Please check and try again.</div>
+                </div>
+                <button type="submit" class="auth-btn" id="verifySubmitBtn">Verify & Complete Account</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="paymentModalTitle">VIP Access Required</h3>
+                <button class="close-btn" onclick="closePaymentModal()">&times;</button>
+            </div>
+
+            <div style="text-align: center;">
+                <div class="price-badge">1000 ETB</div>
+            </div>
+
+            <div class="bilingual-instructions" id="paymentInstructions"></div>
+
+            <div class="account-box">
+                <div>
+                    <div style="font-size:0.7rem; color: var(--text-muted);" id="telebirrAccLabel">Telebirr Account</div>
+                    <strong id="telebirrAcc">+251 950297018</strong>
+                </div>
+                <button class="copy-btn" onclick="copyText('telebirrAcc')" id="copyTeleBtn"><i class="fa-solid fa-copy"></i> Copy</button>
+            </div>
+
+            <div class="account-box">
+                <div>
+                    <div style="font-size:0.7rem; color: var(--text-muted);" id="cbeAccLabel">CBE Bank Account</div>
+                    <strong id="cbeAcc">1000783952045</strong>
+                </div>
+                <button class="copy-btn" onclick="copyText('cbeAcc')" id="copyCbeBtn"><i class="fa-solid fa-copy"></i> Copy</button>
+            </div>
+
+            <div class="uploader-box" onclick="document.getElementById('receiptInput').click()">
+                <span id="fileNameDisplay"><i class="fa-solid fa-image"></i> Upload Payment Screenshot</span>
+                <input type="file" id="receiptInput" accept="image/*" style="display:none;" onchange="handleFileSelect()">
+            </div>
+
+            <button class="verify-btn" onclick="runVerification()" id="verifyBtn"><i class="fa-solid fa-shield-halved"></i> Check My Screenshot</button>
+            <div id="verifyStatus"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="aboutModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="aboutModalTitle">About Us</h3>
+                <button class="close-btn" onclick="closeAboutModal()">&times;</button>
+            </div>
+            <div class="bilingual-instructions" id="aboutText"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
