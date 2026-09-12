@@ -121,7 +121,7 @@ const data = {
         { title: "Eden", sub: "764 Followers", age: 24, city: "Bahir Dar", img: "https://i.postimg.cc/gcscpsXp/images-(27).jpg", isOnline: false },
         { title: "Meron", sub: "951 Followers", age: 19, city: "Bishoftu", img: "https://i.postimg.cc/QM7xrr5S/images-(27)-(1).jpg", isOnline: true },
         { title: "Makiba", sub: "1.1k Followers", age: 25, city: "Mekelle", img: "https://i.postimg.cc/CxXLtKZp/images-(27)-(2).jpg", isOnline: false },
-        { title: "Frehiwot", sub: "5k Followers", age: 22, city: "Addis Ababa", img: "https://i.postimg.cc/gJPczBHk/images-(27)-(3).jpg", isOnline: true },
+        { title: "Frehiwet", sub: "5k Followers", age: 22, city: "Addis Ababa", img: "https://i.postimg.cc/gJPczBHk/images-(27)-(3).jpg", isOnline: true },
         { title: "Martha", sub: "58 Followers", age: 21, city: "Dire Dawa", img: "https://i.postimg.cc/rmCVKCfp/images-(27)-(4).jpg", isOnline: true },
         { title: "Yordanos", sub: "2.1k Followers", age: 23, city: "Addis Ababa", img: "https://i.postimg.cc/V6BfdBKf/images-(27)-(5).jpg", isOnline: false },
         { title: "Feven", sub: "866 Followers", age: 20, city: "Hawassa", img: "https://i.postimg.cc/SspQStfR/images-(27)-(6).jpg", isOnline: true },
