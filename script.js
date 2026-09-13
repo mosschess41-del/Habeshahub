@@ -222,7 +222,7 @@ const mockChats = [
         subTextUnread: "New message",
         subTextRead: "ሰላም እንዴት ነክ እኔን መብዳት ትፈልጋለክ? 🥹",
         time: "10:12 AM",
-        img: "https://i.postimg.cc/xCgYV8j4/blackteensubmit-model-1.jpg",
+        img: "https://i.postimg.cc/PfyfHyLV/telegram-logo.jpg",
         hasUnread: true,
         messages: [
             { type: "received", text: "ሰላም እንዴት ነክ እኔን መብዳት ትፈልጋለክ? 🥹", time: "10:12 AM" }
@@ -234,7 +234,7 @@ const mockChats = [
         subTextUnread: "New message",
         subTextRead: "Hey bb sex ማድረግ ከፈለክ አናግረኝ ",
         time: "10:45 AM",
-        img: "https://i.postimg.cc/9M1VH0Xk/xn-9-t.jpg",
+        img: "https://i.postimg.cc/bJHysHmZ/images-(65).jpg",
         hasUnread: true,
         messages: [
             { type: "received", text: "Hey bb sex ማድረግ ከፈለክ አናግረኝ ", time: "10:45 AM" }
