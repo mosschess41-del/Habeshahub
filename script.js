@@ -111,7 +111,7 @@ const data = {
         { title: "Thion", sub: "790 Followers", age: 25, city: "Jimma", img: "https://i.postimg.cc/mkgshxcN/1788172348389.jpg", isOnline: false },
         { title: "Fikr", sub: "1.9k Followers", age: 29, city: "Addis Ababa", img: "https://i.postimg.cc/3R77503Q/1788172355452.jpg", isOnline: true },
         { title: "Sara", sub: "300 Followers", age: 30, city: "Bahir Dar", img: "https://i.postimg.cc/13ksBYTM/1788172366061.jpg", isOnline: false },
-        { title: "Nardos", sub: "840 Followers", age: 25, city: "Hawassa", img: "https://i.postimg.cc/CxBwjVvd/1788172373952.jpg", isOnline: true },
+        { title: "Nardos", sub: "840 Followers", age: 25, city: "Welkite", img: "https://i.postimg.cc/CxBwjVvd/1788172373952.jpg", isOnline: true },
         { title: "Mekdes", sub: "2.2k Followers", age: 24, city: "Addis Ababa", img: "https://i.postimg.cc/MpMzy8s8/1788172387659.jpg", isOnline: true },
         { title: "Tsion", sub: "2.6k Followers", age: 27, city: "Adama", img: "https://i.postimg.cc/Y2R27RGk/20c2c1ae906b1aed619cd04af126ce32.jpg", isOnline: false },
         { title: "Beti", sub: "194 Followers", age: 24, city: "Addis Ababa", img: "https://i.postimg.cc/XqsngNSM/36148884-258672284688860-5764975112105230336-n.jpg", isOnline: true },
