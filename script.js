@@ -103,7 +103,7 @@ const data = {
         { title: "Hawi", sub: "1.1k Followers", age: 21, city: "Mekelle", img: "https://i.postimg.cc/T2txFPFd/1788172001049.jpg", isOnline: false },
         { title: "Meklit", sub: "2k Followers", age: 23, city: "Harar", img: "https://i.postimg.cc/j23r78PH/1788172097789.jpg", isOnline: true },
         { title: "Hana", sub: "580 Followers", age: 22, city: "Addis Ababa", img: "https://i.postimg.cc/L5QM1yL1/1788172115673.jpg", isOnline: true },
-        { title: "Saron", sub: "2.1k Followers", age: 26, city: "Addis Ababa", img: "https://i.postimg.cc/1X7ZqWw8/1788172122212.jpg", isOnline: false },
+        { title: "Saron", sub: "2.1k Followers", age: 26, city: "Dubai", img: "https://i.postimg.cc/1X7ZqWw8/1788172122212.jpg", isOnline: false },
         { title: "Eden", sub: "93 Followers", age: 24, city: "Hawassa", img: "https://i.postimg.cc/J4hrzXZ7/1788172128809.jpg", isOnline: true },
         { title: "Mahlet", sub: "654 Followers", age: 20, city: "Adama", img: "https://i.postimg.cc/yxpzZfcB/1788172194616.jpg", isOnline: false },
         { title: "Hermela", sub: "159 Followers", age: 29, city: "Gondar", img: "https://i.postimg.cc/1X3Q4xn5/1788172228887.jpg", isOnline: true },
