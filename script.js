@@ -146,7 +146,7 @@ const data = {
         { title: "Azeb", sub: "3.1k Followers", age: 23, city: "Addis Ababa", img: "https://i.postimg.cc/VvKzFsQm/images-(47).jpg", isOnline: false },
         { title: "Bisrat", sub: "276 Followers", age: 20, city: "Hawassa", img: "https://i.postimg.cc/mkmTSZf4/images-(48).jpg", isOnline: true },
         { title: "Haset", sub: "982 Followers", age: 22, city: "Adama", img: "https://i.postimg.cc/ZnwJLYtz/images-(49).jpg", isOnline: false },
-        { title: "Meaza", sub: "154 Followers", age: 24, city: "Gondar", img: "https://i.postimg.cc/SRgmGQ0H/images-(50).jpg", isOnline: true },
+        { title: "Seada", sub: "154 Followers", age: 24, city: "Al Mukalla", img: "https://i.postimg.cc/NFS4CNKc/images-(27)-(10).jpg", isOnline: true },
         { title: "Etsegenet", sub: "658 Followers", age: 21, city: "Addis Ababa", img: "https://i.postimg.cc/Y0rpgGVH/images-(51).jpg", isOnline: true },
         { title: "Elsa", sub: "790 Followers", age: 23, city: "Jimma", img: "https://i.postimg.cc/90mWTRkN/images-(54).jpg", isOnline: false },
         { title: "Senait", sub: "1.2k Followers", age: 22, city: "Addis Ababa", img: "https://i.postimg.cc/kGJn86HT/images-(55).jpg", isOnline: true },
